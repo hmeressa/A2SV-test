@@ -1,4 +1,4 @@
-import { LikeService } from "../service/likeService";
+import { LikeService } from "../../src/service/likeService.js";
 
 export class LikeController {
 

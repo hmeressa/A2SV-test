@@ -15,8 +15,9 @@ const port = 3000;
 app.use(express.json());
 
 // Define the POST route for user creation
-app.post('/api/v1/users', authenticateToken, UserController.createUser);
+app.post('/api/v1/users', authenticateToken, upload.single('bio'), UserController.createUser);
 app.get('/api/v1/users', authenticateToken, UserController.getAllUsers);
+
 // Auth user routes
 app.post('/api/v1/users/auth', authenticateToken, UserController.authenticateUser);
 
@@ -41,14 +42,12 @@ app.get('/api/v1/comment/:id', CommentController.getCommentById);
 app.put('/api/v1/comments', CommentController.updateComment);
 app.delete('/api/v1/comment', CommentController.deleteComment);
 
-// Like a blog
-router.post('/likes', (req, res) => likeController.likeBlog(req, res));
-
 //Like routes
-router.post('/likes', LikeController.likeBlog);
-router.delete('/likes', LikeController.unlikeBlog);
-router.get('/blogs/:blogId/likes', LikeController.getLikesForBlog);
-router.get('/users/:userId/likes', LikeController.getLikesByUser);
+app.post('/likes', (req, res) => likeController.likeBlog(req, res));
+app.post('/likes', LikeController.likeBlog);
+app.delete('/likes', LikeController.unlikeBlog);
+app.get('/blogs/:blogId/likes', LikeController.getLikesForBlog);
+app.get('/users/:userId/likes', LikeController.getLikesByUser);
 
 
 // Define search routes

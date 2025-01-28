@@ -1,7 +1,7 @@
-import { AppDataSource } from "../config/connection";
-import { Blog } from "../model/blog";
-import { Like } from "../model/Like";
-import { User } from "../model/user";
+import { AppDataSource } from "../config/connection.js";
+import { Blog } from "../model/blog.js";
+import { Like } from "../model/Like.js";
+import { User } from "../model/user.js";
 
 const likeRepository = AppDataSource.getRepository(Like);
 const userRepository = AppDataSource.getRepository(User);

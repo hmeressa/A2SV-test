@@ -1,5 +1,5 @@
 import { EntitySchema } from 'typeorm';
-import { UserRoles } from '../enum/user';
+import { UserRoles } from '../../src/enum/user.js';
 
 // Define the User entity
 export const User = new EntitySchema({

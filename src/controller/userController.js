@@ -5,6 +5,11 @@ export class UserController {
     static async createUser(req, res) {
         try {
             const userData = req.body;
+            const imagePath = req.file?.path; // Get the uploaded file's path
+
+            if (!imagePath) {
+                return res.status(400).json({ message: 'No file uploaded.' });
+            }
             const user = await UserService.createUser(userData);
             res.status(201).json(user);
         } catch (error) {
