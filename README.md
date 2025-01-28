@@ -14,16 +14,8 @@ cd A2SV-test
 
 2. Install dependencies:
 After cloning the repository, install the necessary dependencies:
-
-bash
-Copy
-Edit
 npm install
 
 Usage
 Once the dependencies are installed and the configuration is set, you can start the application by running the following command:
-
-bash
-Copy
-Edit
 npm run start
