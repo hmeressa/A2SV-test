@@ -7,6 +7,7 @@ import authenticateToken from './src/middleware/auth.js';
 import { CommentController } from './src/controller/commentController.js';
 import { SearchController } from './src/controller/searchController.js';
 import { LikeController } from './src/controller/likeController.js';
+import { upload } from './src/utils/uploadImage.js';
 
 const app = express();
 const port = 3000;
